@@ -49,17 +49,113 @@ console.log(book2)
 
 // Task 5: Create a nested object representing a library with properties like name and books (an array of book objects), and log the library object to the console. 
 
-// Task 6: Access and log the name of the library and the titles of all the books in the library.
+const library = {
+    name: "Randomville Library",
+    address: "456 Fictional Ave, Randomtown",
+    books: [
+        {
+            title: "The Quest for Unknown",
+            author: "Alice Wonder",
+            year: 1987,
+            genres: ["Mystery", "Thriller"],
+            available: true
+        },
+        {
+            title: "Galaxy of Dreams",
+            author: "Bob Stellar",
+            year: 2005,
+            genres: ["Science Fiction", "Adventure"],
+            available: false
+        },
+        {
+            title: "The Whispering Woods",
+            author: "Catherine Forest",
+            year: 2012,
+            genres: ["Fantasy", "Drama"],
+            available: true
+        }
+    ]
+};
 
+// Log the library object to the console
+console.log(library);
+
+
+
+// Task 6: Access and log the name of the library and the titles of all the books in the library.
+console.log("Library name :",library.name)
+library.books.forEach(book =>{
+    console.log("Book titles are:",book.title)
+})
 // Activity 4: The this Keyword
 
 // Task 7: Add a method to the book object that uses the this keyword to return a string with the book's title and year, and log the result of calling this method.
+// Define the library object with non-existing data and a method for each book
+const library2 = {
+    name: "Randomville Library",
+    address: "456 Fictional Ave, Randomtown",
+    books: [
+        {
+            title: "The Quest for Unknown",
+            author: "Alice Wonder",
+            year: 1987,
+            genres: ["Mystery", "Thriller"],
+            available: true,
+            getTitleAndYear: function() {
+                return `${this.title} (${this.year})`;
+            }
+        },
+        {
+            title: "Galaxy of Dreams",
+            author: "Bob Stellar",
+            year: 2005,
+            genres: ["Science Fiction", "Adventure"],
+            available: false,
+            getTitleAndYear: function() {
+                return `${this.title} (${this.year})`;
+            }
+        },
+        {
+            title: "The Whispering Woods",
+            author: "Catherine Forest",
+            year: 2012,
+            genres: ["Fantasy", "Drama"],
+            available: true,
+            getTitleAndYear: function() {
+                return `${this.title} (${this.year})`;
+            }
+        }
+    ]
+};
 
+// Log the library2 object to the console
+console.log(library2);
+
+// Loop through the books and log the result of calling the getTitleAndYear method
+library2.books.forEach(book => {
+    console.log(book.getTitleAndYear());
+});
+
+console.log("-----------------")
 // Activity 5: Object Iteration
 
 // Task 8: Use a for. In loop to iterate over the properties of the book object and log each property and its value.
 
+library2.books.forEach(book => {
+    console.log(`Title: ${book.title}`);
+    console.log(`Author: ${book.author}`);
+    console.log(`Year: ${book.year}`);
+    console.log(`Genres: ${book.genres.join(', ')}`);
+    console.log(`Available: ${book.available}`);
+    console.log('---');
+});
 // Task 9: Use Object.keys and Object values methods to log all the keys and values of the book object.
+
+library2.books.forEach(book => {
+    console.log("Book Keys:", Object.keys(book));
+    console.log("Book Values:", Object.values(book));
+});
+
 
 // Feature Request:
 
